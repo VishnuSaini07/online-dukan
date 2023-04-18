@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Rubik', sans-serif;
+}
+
+a {
+  text-decoration: none !important;
+  font-size: 18px !important;
+  color: black !important;
+}
+
+.carousel-inner {
+  height: 600px;
+  width: 100%;
+  position: relative;
+}
+
+/* Carousel */
+
+.carousel-inner .carousel-item{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  width: 100%;
+}
+
+.carousel-inner .carousel-item img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1);
+}
+
+/* .card {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+}
+
+.card img {
+  position: absolute;
+  left: 0;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.75s;
+  cursor: pointer;
+}
+.card img:hover {
+  transform: scale(1.15);
+} */
+
+/* Footer */
+
+.email {
+  position: relative;
+}
+
+.signup {
+  position: absolute;
+  top: 6px;
+  right: 5px;
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: 500 !important;
+  color: white !important;
+  background-color: black;
+  border-radius: 6px;
+  padding: 2px 10px;
+}
+
+.copyright {
+  width: 100%;
+  position: absolute;
+  left: 0;
+}
+
+.copyright p {
+  margin-top: 12px;
+}
