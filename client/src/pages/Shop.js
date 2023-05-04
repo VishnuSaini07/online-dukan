@@ -296,7 +296,7 @@ const Shop = () => {
                                         <div className="card img rounded-2 border-0" >
                                             <img src={`/api/v1/product/product-image/${p._id}`} className="card-img-top rounded-0" onClick={() => navigate(`/product/${p.slug}`)} alt={p.name} />
                                             <div className="card-body px-0">
-                                                <span className="card-text text-start fw-bold fs-3">{p.name}</span><br />
+                                                <span className="card-text text-start fw-bold fs-3">{p.name.substring(0,20)}...</span><br />
                                                 <span className="card-text text-secondary">{p.description.substring(0, 30)}...</span><br />
                                                 <span className="card-text text-start fw-normal fs-4 pt-3">₹{p.price}</span>
                                             </div>
