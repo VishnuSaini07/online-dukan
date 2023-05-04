@@ -138,12 +138,11 @@ const Cart = () => {
                             <span>Total</span>
                             <span>{totalPrice()}</span>
                         </div>
-                        <button className='btn btn-dark mt-5 w-100 mb-3' style={{ padding: '15px 150px' }}>Continue to checkout</button>
+                        {/* <button className='btn btn-dark mt-5 w-100 mb-3' style={{ padding: '15px 150px' }}>Continue to checkout</button> */}
                         {auth?.user?.address ? (
                             <>
-                                <div className="mb-3">
-                                    <h4>Current Address</h4>
-                                    <h5>{auth?.user?.address}</h5>
+                                <div className="my-3">
+                                    <h4>Current Address : {auth?.user?.address}</h4>
                                     <button className='btn btn-outline-warning' onClick={() => navigate("/dashboard/user/profile")}>Update Address</button>
                                 </div>
                             </>

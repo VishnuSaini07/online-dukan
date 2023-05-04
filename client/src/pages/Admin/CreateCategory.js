@@ -4,6 +4,8 @@ import toast from 'react-hot-toast';
 import axios from "axios";
 import CategoryForm from '../../components/Form/CategoryForm';
 import { Modal } from "antd";
+import { AiFillDelete } from "react-icons/ai"
+import { IoCreateOutline } from "react-icons/io5"
 
 const CreateCategory = () => {
     const [categories, setCategories] = useState([]);
@@ -110,8 +112,9 @@ const CreateCategory = () => {
                                                 <td>
                                                     <button className="btn btn-primary ms-2" onClick={() => {
                                                         setVisible(true); setUpdatedName(c.name);
-                                                    setSelected(c)}}>Edit</button>
-                                                    <button className="btn btn-danger ms-2" onClick={() => handleDelete(c._id)}>Delete</button>
+                                                        setSelected(c);
+                                                    }}><IoCreateOutline /> Edit</button>
+                                                    <button className="btn btn-danger ms-2" onClick={() => handleDelete(c._id)}><AiFillDelete /> Delete</button>
                                                 </td>
                                             </tr>
                                         </>

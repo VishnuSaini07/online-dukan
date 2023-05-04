@@ -243,4 +243,18 @@ const orderStatusController = async (req, res) => {
     }
 };
 
-module.exports = { registerController, loginController, testController, forgotPasswordController, updateProfileController, getOrdersController, getAllOrdersController, orderStatusController }; 
+const getAllUsersController = async (req, res) => {
+    try {
+        const users = await userModel.find({role: 0});
+        res.json(users);
+    } catch (error) {
+        console.log(error);
+        res.status(500).send({
+            success: false,
+            message: "Error while getiing users",
+            error,
+        });
+    }
+}
+
+module.exports = { registerController, loginController, testController, forgotPasswordController, updateProfileController, getOrdersController, getAllOrdersController, orderStatusController, getAllUsersController }; 
