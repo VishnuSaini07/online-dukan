@@ -8,6 +8,7 @@ const authRoute = require("./routes/authRoute");
 const categoryRoute = require("./routes/categoryRoutes");
 const productRoute = require("./routes/productRoutes");
 const cors = require("cors");
+const path = require("path");
 
 // configure env
 dotenv.config();
@@ -21,18 +22,19 @@ app.use(bodyParser.json({ limit: '10mb' }));
 
 // middleware
 app.use(cors());
-app.use(express.json())
-app.use(morgan('dev'))
+app.use(express.json());
+app.use(morgan('dev'));
 
 //routes
 app.use("/api/v1/auth", authRoute);
 app.use("/api/v1/category", categoryRoute);
-app.use("/api/v1/product", productRoute)
+app.use("/api/v1/product", productRoute);
+app.use(express.static(path.join(__dirname, './client/build')));
 
 //rest api
-app.get('/', (req, res) => {
-    res.send("<h1>Welcome to App</h1>");
-})
+app.use('*', function (req, res) {
+    res.sendFile(path.join(__dirname, './client/build/index.html'));
+});
 
 //port
 const PORT = process.env.PORT || 8080;
